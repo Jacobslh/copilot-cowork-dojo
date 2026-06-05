@@ -28,7 +28,7 @@ The file is the unit of governance. Sensitivity label, retention, sharing scope 
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call OneDrive / SharePoint on its own.** It assumes the platform already exposes Microsoft Graph as a tool. The skill teaches Cowork *how to use OneDrive / SharePoint well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call OneDrive / SharePoint on its own.** It assumes the platform already exposes Microsoft Graph as a tool. The skill teaches Cowork *how to use OneDrive / SharePoint well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -46,7 +46,7 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 - Sharing a file with an internal/external audience under the right link policy.
 - Versioning — comparing or restoring previous versions during review.
 
-## Tool Sequence
+## How to Use
 
 1. **Resolve the location** — `driveId` + `itemId` (or site + library + path). Never operate by friendly URL alone.
 2. **Check the sensitivity label** before reading. Confidential / Highly Confidential content has handling rules — see [governance/data-handling.md](../../governance/data-handling.md).
@@ -63,6 +63,15 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 | `sharingScope` | Anonymous links may be tenant-blocked; check before promising. |
 | `conflictBehavior` | `rename` vs. `replace` vs. `fail` — pick deliberately. |
 | `expirationDateTime` | External shares should default to time-bound. |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Save in-progress Copilot work over the published filename | Write to a draft path, verify, then promote to the published path |
+| Grant "Anyone with the link" by default | Default to "People in your org"; reserve anonymous links for a reasoned exception |
+| Cite a SharePoint URL only you can open | Confirm the audience can open the link before citing it |
+| Operate on a file by its friendly URL alone | Resolve `driveId` + `itemId` so the reference survives renames |
 
 ## Critical Rules
 

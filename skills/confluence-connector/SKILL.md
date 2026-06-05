@@ -28,7 +28,7 @@ Confluence is wiki-as-knowledge-graph. Use page hierarchy and labels — they're
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call Confluence on its own.** It assumes the platform already exposes Confluence as a tool. The skill teaches Cowork *how to use Confluence well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call Confluence on its own.** It assumes the platform already exposes Confluence as a tool. The skill teaches Cowork *how to use Confluence well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -46,7 +46,7 @@ If any of those are missing, this skill degrades to a manual reference: *"Search
 - Updating a runbook with a new step from a recent incident.
 - Cross-linking a new page to its parents and siblings.
 
-## Tool Sequence
+## How to Use
 
 1. **Resolve the space + parent page.** `spaceKey` + `parentId`. New pages without a parent become orphans.
 2. **Search** with CQL before creating — duplicates are the #1 Confluence pathology.
@@ -73,6 +73,15 @@ If any of those are missing, this skill degrades to a manual reference: *"Search
 | `labels` | Drive your CQL hygiene. Standardize across the team. |
 | `representation` | `storage` for round-trippable edits, `wiki` for quick markdown-ish. |
 | `version.number` | Required for concurrency-safe updates. |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Create a page with no parent | Resolve `parentId` first — orphan pages don't get found |
+| Edit the rendered HTML view | Edit the `storage` representation for round-trippable changes |
+| Rewrite a decision record in place | Supersede it with a new page; decision records are immutable |
+| Publish without checking for duplicates | Run a CQL `title ~` search before creating |
 
 ## Critical Rules
 

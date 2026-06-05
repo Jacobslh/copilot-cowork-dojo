@@ -28,7 +28,7 @@ A status update is only as good as the underlying task data. Make Planner the so
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call Planner on its own.** It assumes the platform already exposes Microsoft Graph Planner / Tasks as tools. The skill teaches Cowork *how to use Planner well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call Planner on its own.** It assumes the platform already exposes Microsoft Graph Planner / Tasks as tools. The skill teaches Cowork *how to use Planner well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -46,7 +46,7 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 - Reconciling Planner vs. a separate tracker (Excel, Loop, Jira).
 - Creating recurring task templates from a kata-style checklist.
 
-## Tool Sequence
+## How to Use
 
 1. **Resolve the plan / bucket** — `planId`, `bucketId`. Bucket = workstream; choose deliberately.
 2. **Read** open tasks filtered by assignee, due date, label.
@@ -63,6 +63,15 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 | `appliedCategories` | Color labels are the cheap way to slice (e.g., risk vs. action). |
 | `dueDateTime` | Time component is rarely meaningful — normalize to end-of-day in the owner's TZ. |
 | `priority` | 1=urgent … 9=low. Reserve `1` for genuine escalations. |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Bulk-create tasks with no owners | Assign a single current owner plus a due date to every task |
+| Silently reassign a departed colleague's tasks | Bulk-reassign with an audit comment explaining the change |
+| Keep one plan in Planner and another in Excel | Pick one canonical tracker; mirror in a single direction only |
+| Let Copilot guess due dates from vague verbal commitments | Ask for the date, then set it |
 
 ## Critical Rules
 
