@@ -18,11 +18,11 @@ The review pass is where you earn your belt. Apply the same lens you'd apply to 
 
 | Lens | Question | Color |
 |---|---|---|
-| Facts | Every number/name/date/quote traceable? | 🟢/🟡/🔴 |
-| Tone | Sounds like the audience expects? | 🟢/🟡/🔴 |
-| Omissions | What did the audience need that's missing? | 🟢/🟡/🔴 |
-| Bias | Whose perspective is over- or under-represented? | 🟢/🟡/🔴 |
-| Audience fit | Will the reader make the right decision after reading? | 🟢/🟡/🔴 |
+| Facts | Every number/name/date/quote traceable? | GREEN/AMBER/RED |
+| Tone | Sounds like the audience expects? | GREEN/AMBER/RED |
+| Omissions | What did the audience need that's missing? | GREEN/AMBER/RED |
+| Bias | Whose perspective is over- or under-represented? | GREEN/AMBER/RED |
+| Audience fit | Will the reader make the right decision after reading? | GREEN/AMBER/RED |
 
 ## When to Use
 
@@ -42,13 +42,13 @@ Run a five-lens review:
 | Bias | Whose perspective is over- or under-represented? |
 | Audience fit | Will the reader make the right decision after reading? |
 
-Mark each lens 🟢 / 🟡 / 🔴 and address every 🔴 / 🟡 in the next refine pass.
+Mark each lens GREEN / AMBER / RED and address every RED / AMBER in the next refine pass.
 
 ## Examples
 
 | ❌ Surface review | ✅ Five-lens review |
 |---|---|
-| "Looks good, send it." | Facts 🟡 (one number unsourced) · Tone 🟢 · Omissions 🔴 (no risk section) → refine |
+| "Looks good, send it." | Facts AMBER (one number unsourced) · Tone GREEN · Omissions RED (no risk section) → refine |
 | Skim for typos | Reopen sources; verify three claims at random |
 | "Make it better" | Name the lens that failed and the specific defect |
 
@@ -66,7 +66,7 @@ Mark each lens 🟢 / 🟡 / 🔴 and address every 🔴 / 🟡 in the next refi
 - Trusting Copilot's confidence — confidence ≠ accuracy.
 - Reviewing without the source artifacts open.
 - Skipping the bias lens because it's uncomfortable.
-- Marking 🟡 to avoid a refine pass.
+- Marking AMBER to avoid a refine pass.
 
 ## Anti-Patterns
 
@@ -78,7 +78,7 @@ Mark each lens 🟢 / 🟡 / 🔴 and address every 🔴 / 🟡 in the next refi
 ## Verify Before Refining
 
 - [ ] All five lenses scored.
-- [ ] Each 🔴 / 🟡 has a specific defect named.
+- [ ] Each RED / AMBER has a specific defect named.
 - [ ] Source artifacts opened.
 - [ ] Bias lens explicitly considered.
 - [ ] Audience-fit reread from the audience's perspective.
