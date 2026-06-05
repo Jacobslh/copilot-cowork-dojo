@@ -44,10 +44,10 @@ Citations are how trust scales. Without them, every reader has to re-do your wor
 
 | ❌ Vague | ✅ Cited |
 |---|---|
-| "Per recent analysis, churn is up." | "Q3 churn was 4.1% ([SaaS metrics workbook → Q3 tab](link))." |
-| "Legal said it's fine." | "Per [Priya's note in #project-helios](link), legal review concludes Friday." |
-| "The deck shows growth in EMEA." | "EMEA grew 18% YoY ([Q3 board deck → slide 7](link))." |
-| "According to the report…" | "Per [Q3 risk register, row 14](link), the OFAC review is the top risk." |
+| "Per recent analysis, churn is up." | "Q3 churn was 4.1% ([SaaS metrics workbook → Q3 tab](#))." |
+| "Legal said it's fine." | "Per [Priya's note in #project-helios](#), legal review concludes Friday." |
+| "The deck shows growth in EMEA." | "EMEA grew 18% YoY ([Q3 board deck → slide 7](#))." |
+| "According to the report…" | "Per [Q3 risk register, row 14](#), the OFAC review is the top risk." |
 
 ## Critical Rules
 

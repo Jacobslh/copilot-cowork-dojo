@@ -48,12 +48,12 @@ When the same `rule` shows up 3+ times across lessons, run `pwsh scripts/lesson-
 
 ## Examples
 
-| Trigger | Lesson entry |
+| ❌ Weak entry | ✅ Strong entry |
 |---|---|
-| Copilot invented an owner name | rule: "Never accept named-person attributions without source" |
-| Section-by-section drafting saved 30 min | rule: "For memos > 1 page, always section-by-section" |
-| Voice samples improved tone | rule: "Always paste 2–3 prior sent items for voice match" |
-| 3rd recurrence of owner-hallucination | Promote to `memory/patterns/owner-attribution.md` |
+| "Be careful with owner names." | rule: "Never accept a named-person attribution without a source link." |
+| "Section drafting is good." | rule: "For memos > 1 page, draft section-by-section — saved 30 min this session." |
+| "Tone was off." | rule: "Paste 2–3 prior sent items so Copilot matches the writer's voice." |
+| Logging a one-off as a recurring pattern | "3rd recurrence — promote to `memory/patterns/owner-attribution.md`." |
 
 ## Critical Rules
 
