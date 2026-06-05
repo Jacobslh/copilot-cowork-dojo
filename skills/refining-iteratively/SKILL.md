@@ -24,7 +24,7 @@ The difference between a 5-prompt session and a 25-prompt session is specificity
 
 ## When to Use
 
-- After [reviewing-output](../reviewing-output/SKILL.md) flagged 🔴 / 🟡.
+- After [reviewing-output](../reviewing-output/SKILL.md) flagged RED / AMBER.
 - When Copilot's first draft is structurally right but specifics need work.
 - *Not* when the structure is wrong — re-plan instead.
 

@@ -28,7 +28,7 @@ JQL is the API. Master a small set of canonical queries and your status updates 
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call Jira on its own.** It assumes the platform already exposes Jira as a tool. The skill teaches Cowork *how to use Jira well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call Jira on its own.** It assumes the platform already exposes Jira as a tool. The skill teaches Cowork *how to use Jira well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -46,7 +46,7 @@ If any of those are missing, this skill degrades gracefully to: *"Open Jira manu
 - Reconciling Jira vs. Planner / roadmap docs.
 - Bulk-updating labels, fix versions, or components after a re-plan.
 
-## Tool Sequence
+## How to Use
 
 1. **Frame with JQL.** Start narrow: project, sprint, status, assignee. Iterate.
 2. **List** issues — pull only the fields you need (`summary`, `status`, `assignee`, `priority`, `labels`, `fixVersion`, `parent`, `customfield_xxxx`).
@@ -64,6 +64,15 @@ If any of those are missing, this skill degrades gracefully to: *"Open Jira manu
 | My team's escalations | `project = ABC AND priority in (Highest, High) AND resolution = Unresolved` |
 | Recently closed (release notes) | `project = ABC AND resolutiondate >= -14d AND status = Done` |
 | Orphans (no epic) | `project = ABC AND "Epic Link" is EMPTY AND issuetype = Story` |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Transition an issue by status name | Use the workflow's `transitionId` — names collide across projects |
+| Hardcode `customfield_10001` across tenants | Re-resolve custom field IDs per Jira instance |
+| Paste raw JQL output into an exec status | Translate engineer shorthand for the audience; cite issue keys |
+| Run a bulk transition blind | Dry-run on one issue, confirm no automation fired, then expand |
 
 ## Critical Rules
 

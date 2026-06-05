@@ -27,7 +27,7 @@ Email is the most overloaded surface in the enterprise. Use Copilot to triage an
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call Outlook on its own.** It assumes the platform already exposes Microsoft Graph mail / calendar as tools. The skill teaches Cowork *how to use Outlook well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call Outlook on its own.** It assumes the platform already exposes Microsoft Graph mail / calendar as tools. The skill teaches Cowork *how to use Outlook well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -46,7 +46,7 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 - Searching across mailboxes you have delegated access to.
 - Producing a meeting invite from a [meeting-prep](../meeting-prep/SKILL.md) brief.
 
-## Tool Sequence
+## How to Use
 
 1. **Search / list** messages by `conversationId`, sender, date range, or KQL — narrow before you read.
 2. **Read** the thread, then attachments. Treat attachments as separate sources for citation.
@@ -63,6 +63,15 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 | `subject` | Don't auto-rewrite an existing thread's subject — breaks threading. |
 | `attachments` | Re-attach only what's needed; remove confidential earlier attachments when forwarding externally. |
 | `categories` / `flag` | Use to mark Copilot-drafted items pending human review. |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Let Copilot auto-send a drafted reply | Draft to the Outlook drafts folder; a human reviews, then sends |
+| Rewrite the subject line on a reply | Keep the existing subject; reply by `conversationId` to preserve threading |
+| Forward a thread externally as-is | Strip internal-only earlier messages and sensitive attachments first |
+| "Summarize my inbox" with no scope | Filter by sender + date + folder before reading — privacy and cost both matter |
 
 ## Critical Rules
 

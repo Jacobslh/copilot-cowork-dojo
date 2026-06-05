@@ -28,7 +28,7 @@ Teams is where the conversation lives. Treat it as a first-class data source —
 
 ## Prerequisites — this skill is a playbook, not the connector
 
-> ⚠️ **A `SKILL.md` cannot call Teams on its own.** It assumes the platform already exposes Microsoft Graph Teams as tools. The skill teaches Cowork *how to use Teams well*; the connector itself is separate infrastructure.
+> **A `SKILL.md` cannot call Teams on its own.** It assumes the platform already exposes Microsoft Graph Teams as tools. The skill teaches Cowork *how to use Teams well*; the connector itself is separate infrastructure.
 
 Before this skill works end-to-end you need:
 
@@ -47,7 +47,7 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 - Bridging a meeting transcript into downstream artifacts (memo, action list).
 - Retrieving meeting attendees and roles for a [meeting-recap](../meeting-recap/SKILL.md).
 
-## Tool Sequence
+## How to Use
 
 1. **Identify scope** — `teamId`, `channelId`, `chatId`, or `meetingId`. Never operate by display name; names collide.
 2. **Read** before write: list recent messages, get the meeting transcript, list participants.
@@ -64,6 +64,15 @@ In Cowork on a properly licensed M365 tenant, this is usually present out of the
 | `mentions` | Must be resolved to AAD object IDs to actually notify. |
 | `subject` | Optional but improves channel scannability. |
 | `importance` | `urgent` triggers persistent notifications — use sparingly. |
+
+## Examples
+
+| ❌ Anti-pattern | ✅ Right move |
+|---|---|
+| Post "@John" by display name and assume he's notified | Resolve John to his AAD object ID, then @mention so he is actually pinged |
+| Pull the meeting transcript the moment the call ends | Wait until processing completes, then fetch by `meetingId` (early reads return empty) |
+| Cross-post the same update to five channels | Post once to the canonical channel; share a Loop component for the rest |
+| Compose the recap directly in the channel box | Draft in Word/Loop, verify, then post via the connector |
 
 ## Critical Rules
 

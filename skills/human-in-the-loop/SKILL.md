@@ -25,7 +25,7 @@ Automation is leverage. Unsupervised automation is risk. The human-in-the-loop s
 | Internal cosmetic edit | ❌ | No risk → no gate |
 | Routine roll-up matching prior | ❌ | Pattern + low blast = no gate |
 
-## When a Human Must Be in the Loop
+## When to Use
 
 - Anything sent externally (customer, partner, regulator).
 - Any decision involving money, people, or legal commitment.
